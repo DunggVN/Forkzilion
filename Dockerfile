@@ -1,12 +1,12 @@
 # inherit prebuilt image
-FROM debian:latest
+FROM debian:bookworm
 
 # env setup
 RUN mkdir /Fizilion && chmod 777 /Fizilion
 ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
-RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list.d/backports.list && \
+RUN echo 'deb http://deb.debian.org/debian bookworm main' > /etc/apt/sources.list.d/backports.list && \
     apt-get update 
 RUN apt-get install -y --no-install-recommends \
     curl \
