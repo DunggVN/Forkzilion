@@ -1,13 +1,13 @@
 # inherit prebuilt image
-FROM ubuntu:20.04
+FROM debian:latest
 
 # env setup
 RUN mkdir /Fizilion && chmod 777 /Fizilion
 ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
-RUN echo deb http://us.archive.ubuntu.com/ubuntu/ focal universe > /etc/apt/sources.list.d/docker.list
-RUN apt-get update && DEBIAN_FRONTEND="noninteractive" TZ="Asia/Ho_Chi_Minh" apt-get install -y tzdata
+RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list.d/backports.list && \
+    apt-get update 
 RUN apt-get install -y --no-install-recommends \
     curl \
     git \
@@ -21,8 +21,7 @@ RUN apt-get install -y --no-install-recommends \
     jq \
     libpq-dev \
     neofetch \
-    python3-pip \
-    python3-psycopg2
+    python3-pip
 
 # clone repo
 RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVNTest /Fizilion
