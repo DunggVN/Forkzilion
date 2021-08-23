@@ -293,7 +293,13 @@ async def chnglogg(event):
     await event.edit(
         "In the latest update, these are the changes:\
         \nHost OS:\
-        \nChanged to Ubuntu 20.04")
+        \nChanged to Debian GNU/Linux 11 (Faster)
+        \nPlugins:
+        \nRemoved .repoo, add some memes (Ohhh, Yesss, Brooo,...)
+        \nCommand Handler:
+        \nUpdated, Now only '.'
+        \nOthers:
+        \nUpdate some package")
 
 CMD_HELP.update(
     {
