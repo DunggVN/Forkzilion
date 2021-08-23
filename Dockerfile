@@ -1,28 +1,24 @@
 # inherit prebuilt image
-FROM debian:bookworm
+FROM python:3.9.6-slim-bullseye
 
 # env setup
 RUN mkdir /Fizilion && chmod 777 /Fizilion
 ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
-RUN echo 'deb http://deb.debian.org/debian bookworm main' > /etc/apt/sources.list.d/backports.list && \
+RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list && \
     apt-get update 
 RUN apt-get install -y --no-install-recommends \
     curl \
     git \
-    gcc \
     g++ \
     build-essential \
     gnupg2 \
     unzip \
-    wget \
     ffmpeg \
     jq \
     libpq-dev \
-    neofetch \
-    python3-pip \
-    python3-psycopg2
+    neofetch
 
 # clone repo
 RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVNTest /Fizilion
