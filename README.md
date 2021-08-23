@@ -24,7 +24,7 @@
 [![Build](https://img.shields.io/github/workflow/status/AbOuLfOoOoOuF/ProjectFizilion/FailedChecker?style=for-the-badge)](https://github.com/AbOuLfOoOoOuF/ProjectFizilion/actions "build")
 [![Build](https://img.shields.io/github/workflow/status/PrajjuS/ProjectFizilion/FailedChecker?style=for-the-badge)](https://github.com/PrajjuS/ProjectFizilion/actions "build")
 
-![Docker_Size](https://img.shields.io/docker/image-size/_/python/3.9.6-slim-bullseye/images/sha256-6331fb167811d3bf7a7a33eaf4ac233ae63fa5d0e21cfd341a22bce2905ec5b5?context=explore?style=for-the-badge)
+![Docker_Size](https://img.shields.io/docker/image-size/_/python/3.9.6-slim-bullseye?context=explore?style=for-the-badge)
 
 ![Docker_Pulls](https://img.shields.io/docker/pulls/elytra8/fizfed?style=for-the-badge)
 
