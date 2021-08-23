@@ -21,6 +21,7 @@ RUN apt-get install -y --no-install-recommends \
     jq \
     libpq-dev \
     neofetch \
+    python-pip \
     python3-pip
 
 # clone repo
