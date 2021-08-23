@@ -21,7 +21,8 @@ RUN apt-get install -y --no-install-recommends \
     jq \
     libpq-dev \
     neofetch \
-    python3-pip
+    python3-pip \
+    python3-psycopg2
 
 # clone repo
 RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVNTest /Fizilion
