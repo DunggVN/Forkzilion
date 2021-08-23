@@ -8,7 +8,7 @@ WORKDIR /Fizilion
 
 RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list && \
     apt-get update 
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get -f install -y --no-install-recommends \
     curl \
     git \
     g++ \
