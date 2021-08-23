@@ -118,7 +118,7 @@ TZ_NUMBER = os.environ.get("TZ_NUMBER") or 1
 USERBOT_VERSION = os.environ.get("USERBOT_VERSION") or "production 3.1+"
 
 # User Terminal alias
-USER_TERM_ALIAS = "Ubuntu-21.04"
+USER_TERM_ALIAS = "Debian-11"
 
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME") or "True")
