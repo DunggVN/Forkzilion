@@ -764,7 +764,7 @@ async def bruh(tard):
 @register(outgoing=True, pattern="^\.pero$")
 async def pero(pru):
     pro = "resources/pro.ogg"
-    message.id = pru.reply.message.id if pru.repy_to_msd_id else None
+    message.id = pru.reply.message.id if pru.repy_to_msg_id else None
     await pru.delete()
     await pru.client.send_file(
         pru.chat,id,
