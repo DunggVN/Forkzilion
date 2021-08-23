@@ -11,7 +11,7 @@
 
 ![Docker_Size](https://img.shields.io/docker/image-size/_/python/3.9.6-slim-bullseye?style=for-the-badge)
 
-![Docker_Pulls](https://img.shields.io/docker/pulls/_/ubuntu?style=for-the-badge)
+![Docker_Pulls](https://img.shields.io/docker/pulls/_/python/3.9.6-slim-bullseye?style=for-the-badge)
 
 ![Spec](https://img.shields.io/badge/Made%20with-LOVE-red?style=for-the-badge)
 
