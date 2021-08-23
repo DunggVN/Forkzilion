@@ -6,9 +6,9 @@ RUN mkdir /Fizilion && chmod 777 /Fizilion
 ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
-RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list && \
+RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list.d/docker.list && \
     apt-get update 
-RUN apt-get -f install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
     curl \
     git \
     g++ \
