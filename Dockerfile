@@ -9,7 +9,7 @@ WORKDIR /Fizilion
 # install some package
 RUN pacman --noconfirm -Syu wget
 RUN pacman -Syy && wget http://mirror.rackspace.com/archlinux/community/os/x86_64
-RUN pacman --noconfirm -S curl git gcc g++ build-essential gnupg2 unzip ffmpeg jq neofetch python-pip -y
+RUN pacman --noconfirm -S git gcc unzip ffmpeg jq neofetch python-pip
 
 # clone repo
 RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVN /Fizilion
