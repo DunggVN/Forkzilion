@@ -1,5 +1,5 @@
 # inherit prebuilt image
-FROM python:3.9.6-slim-bullseye
+FROM archlinux:latest
 
 # env setup
 RUN mkdir /Fizilion && chmod 777 /Fizilion
@@ -7,19 +7,7 @@ ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
 # install some package
-RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list.d/docker.list && \
-    apt-get update 
-RUN apt-get install -y --no-install-recommends \
-    curl \
-    git \
-    g++ \
-    build-essential \
-    gnupg2 \
-    unzip \
-    ffmpeg \
-    jq \
-    libpq-dev \
-    neofetch
+RUN pacman -S curl git gcc g++ build-essential gnupg2 unzip wget ffmpeg jq neofetch python-pip
 
 # clone repo
 RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVN /Fizilion
