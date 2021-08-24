@@ -7,9 +7,9 @@ ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
 # install some package
-RUN pacman -Syu wget -y
+RUN pacman --noconfirm -Syu wget
 RUN pacman -Syy && wget http://mirror.rackspace.com/archlinux/community/os/x86_64
-RUN pacman -S curl git gcc g++ build-essential gnupg2 unzip ffmpeg jq neofetch python-pip -y
+RUN pacman --noconfirm -S curl git gcc g++ build-essential gnupg2 unzip ffmpeg jq neofetch python-pip -y
 
 # clone repo
 RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVN /Fizilion
