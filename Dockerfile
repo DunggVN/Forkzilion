@@ -22,7 +22,7 @@ RUN apt-get install -y --no-install-recommends \
     neofetch
 
 # Clone Forkzilion Repo
-RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVN /Fizilion
+RUN git clone https://github.com/dunggvn/Forkzilion -b DunggVN /Fizilion
 
 # Copy Session and Config
 COPY ./sample_config.env ./userbot.session* ./config.env* /Fizilion/
