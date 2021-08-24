@@ -1,24 +1,34 @@
-# inherit prebuilt image
-FROM archlinux:latest
+# Host OS Image
+FROM python:3.9.6-slim-bullseye
 
-# env setup
+# Setup ENV
 RUN mkdir /Fizilion && chmod 777 /Fizilion
 ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
-# install some package
-RUN pacman --noconfirm -Syu wget
-RUN pacman -Syy && wget http://mirror.rackspace.com/archlinux/community/os/x86_64
-RUN pacman --noconfirm -S git gcc unzip ffmpeg jq neofetch python-pip
+# Install Some Package
+RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list.d/docker.list && \
+    apt-get update 
+RUN apt-get install -y --no-install-recommends \
+    curl \
+    git \
+    g++ \
+    build-essential \
+    gnupg2 \
+    unzip \
+    ffmpeg \
+    jq \
+    libpq-dev \
+    neofetch
 
-# clone repo
+# Clone Forkzilion Repo
 RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVN /Fizilion
 
-# Copies session and config(if it exists)
+# Copy Session and Config
 COPY ./sample_config.env ./userbot.session* ./config.env* /Fizilion/
 
-# install required pypi modules
+# Install Required Pypi Modules
 RUN pip install -r requirements.txt
 
-# Finalization
+# Run your bot
 CMD ["python3","-m","userbot"]
