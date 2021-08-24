@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.0.1
     hooks:
       - id: check-ast
       - id: check-merge-conflict
@@ -13,13 +13,13 @@ repos:
       - id: trailing-whitespace
       
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.10.1
+    rev: v2.24.0
     hooks:
       - id: pyupgrade
         args: [--py39-plus]
         
   - repo: https://github.com/asottile/reorder_python_imports
-    rev: v2.5.0
+    rev: v2.6.0
     hooks:
     -   id: reorder-python-imports
         
@@ -42,12 +42,12 @@ repos:
       - id: add-trailing-comma
           
   - repo: https://github.com/pycqa/isort
-    rev: 5.7.0
+    rev: 5.9.3
     hooks:
       - id: isort
         args: ["--profile", "black", "--filter-files"]
         
   - repo: "https://github.com/psf/black"
-    rev: 20.8b1
+    rev: 21.7b0
     hooks:
       - id: black
