@@ -38,7 +38,7 @@
 
 ### On terminal
 ```
-wget https://raw.githubusercontent.com/PrajjuS/ProjectFizilion/demon/terminal_getstring.sh && bash terminal_getstring.sh
+wget https://raw.githubusercontent.com/DunggVN/Forkzilion/DunggVN/terminal_getstring.sh && bash terminal_getstring.sh
 ```
 
 ## How To Host ?
