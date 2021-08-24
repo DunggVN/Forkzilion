@@ -7,7 +7,7 @@ ENV PATH="/Fizilion/bin:$PATH"
 WORKDIR /Fizilion
 
 # clone repo
-RUN git clone https://github.com/DunggVN/Forkzilion -b DunggVNTest /Fizilion
+RUN git clone https://github.com/dunggvn/Forkzilion -b DunggVNTest /Fizilion
 
 # Copies session and config(if it exists)
 COPY ./sample_config.env ./userbot.session* ./config.env* /Fizilion/
