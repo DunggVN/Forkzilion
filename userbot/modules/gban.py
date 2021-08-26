@@ -119,7 +119,7 @@ async def gban(event):
         pass
     if gban_sql.is_gbanned(user.id):
         await gbun.edit(
-            f"`the `[user](tg://user?id={user.id})` is already in gbanned list any way checking again`"
+            f"`This `[User](tg://user?id={user.id})` is already in gbanned list`"
         )
     else:
         gban_sql.fizgban(user.id, reason)
@@ -128,10 +128,10 @@ async def gban(event):
     count = 0
     fiz = len(san)
     if fiz == 0:
-        await gbun.edit("`you are not admin of atleast one group` ")
+        await gbun.edit("`You are not admin of atleast one group` ")
         return
     await gbun.edit(
-        f"`initiating gban of the `[user](tg://user?id={user.id}) `in {len(san)} groups`"
+        f"**Gbanning this** [User](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -164,7 +164,7 @@ async def gban(event):
                 \n**User : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n**Reason :** `{reason}`\
-                \n__Banned in {count} groups__\
+                \n**Banned in :** `{count} groups`\
                 \n**Time taken : **`{timetaken} seconds`",
             )
         else:
@@ -174,7 +174,7 @@ async def gban(event):
                 \nGlobal Ban\
                 \n**User : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
-                \n__Banned in {count} groups__\
+                \n**Banned in :** `{count} groups`\
                 \n**Time taken : **`{timetaken} seconds`",
             )
         try:
@@ -197,7 +197,7 @@ async def ungban(event):
         gban_sql.fizungban(user.id)
     else:
         await ungbun.edit(
-            f"the [user](tg://user?id={user.id}) `is not in your gbanned list`"
+            f"This [User](tg://user?id={user.id}) `is not in your gbanned list`"
         )
         return
     san = []
@@ -208,7 +208,7 @@ async def ungban(event):
         await ungbun.edit("`you are not even admin of atleast one group `")
         return
     await ungbun.edit(
-        f"initiating ungban of the [user](tg://user?id={user.id}) in `{len(san)}` groups"
+        f"**UnGbanning this** [User](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -240,7 +240,7 @@ async def ungban(event):
                 \n**User : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n**Reason :** `{reason}`\
-                \n__Unbanned in {count} groups__\
+                \n**Unbanned in :** `{count} groups`\
                 \n**Time taken : **`{timetaken} seconds`",
             )
         else:
@@ -250,7 +250,7 @@ async def ungban(event):
                 \nGlobal Unban\
                 \n**User : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
-                \n__Unbanned in {count} groups__\
+                \n**Unbanned in :** `{count} groups`\
                 \n**Time taken : **`{timetaken} seconds`",
             )
 
@@ -260,17 +260,17 @@ async def gablist(event):
     if event.fwd_from:
         return
     gbanned_users = gban_sql.get_all_gbanned()
-    GBANNED_LIST = "Current Gbanned Users\n"
+    GBANNED_LIST = "**Current Gbanned Users**\n"
     if len(gbanned_users) > 0:
         for a_user in gbanned_users:
             if a_user.reason:
-                GBANNED_LIST += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                GBANNED_LIST += f"- [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n**Reason:** `{a_user.reason}`\n"
             else:
                 GBANNED_LIST += (
-                    f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) Reason None\n"
+                    f"- [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n**Reason:** `None`\n"
                 )
     else:
-        GBANNED_LIST = "no Gbanned Users (yet)"
+        GBANNED_LIST = "No Gbanned Users (yet)"
     await edit_or_reply(event, GBANNED_LIST)
 
 
@@ -421,10 +421,10 @@ async def gkick(event):
     count = 0
     fiz = len(san)
     if fiz == 0:
-        await gkic.edit("`you are not admin of atleast one group` ")
+        await gkic.edit("`You are not admin of atleast one group` ")
         return
     await gkic.edit(
-        f"`initiating gkick of the `[user](tg://user?id={user.id}) `in {len(san)} groups`"
+        f"**Gkicking this** [User](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -457,7 +457,7 @@ async def gkick(event):
                 \n**User : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
                 \n**Reason :** `{reason}`\
-                \n__Kicked in {count} groups__\
+                \n**Kicked in :** `{count} groups`\
                 \n**Time taken : **`{timetaken} seconds`",
             )
         else:
@@ -467,7 +467,7 @@ async def gkick(event):
                 \nGlobal Kick\
                 \n**User : **[{user.first_name}](tg://user?id={user.id})\
                 \n**ID : **`{user.id}`\
-                \n__Kicked in {count} groups__\
+                \n**Kicked in :** `{count} groups`\
                 \n**Time taken : **`{timetaken} seconds`",
             )
         if reply:
