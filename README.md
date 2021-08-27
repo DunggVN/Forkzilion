@@ -9,9 +9,9 @@
 
 [![Build](https://img.shields.io/github/workflow/status/DunggVN/Forkzilion/FailedChecker?style=for-the-badge)](https://github.com/AbOuLfOoOoOuF/ProjectFizilion/actions "build")
 
-![Docker_Size](https://img.shields.io/docker/image-size/_/python/3.9.6-slim-bullseye?style=for-the-badge)
+![Docker_Size](https://img.shields.io/docker/image-size/dunggvn/forkzilion?style=for-the-badge)
 
-![Docker_Pulls](https://img.shields.io/docker/pulls/_/python?style=for-the-badge)
+![Docker_Pulls](https://img.shields.io/docker/pulls/dunggvn/forkzilion?style=for-the-badge)
 
 ![Spec](https://img.shields.io/badge/Made%20with-LOVE-red?style=for-the-badge)
 
