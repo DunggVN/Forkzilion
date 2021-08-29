@@ -312,7 +312,6 @@ async def nothanos(unbon):
     await unbon.edit("`Unbanning...`")
 
     user = await get_user_from_event(unbon)
-    user = user[0]
     if user:
         pass
     else:
