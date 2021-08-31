@@ -84,7 +84,6 @@ async def fastpurger(purg):
     await sleep(.5)
     await done.delete()
 
-@register(outgoing=True, pattern="^\.pm")
 @register(outgoing=True, pattern="^\.pme")
 @register(outgoing=True, pattern="^\.purgeme")
 async def purgeme(delme):
@@ -114,24 +113,6 @@ async def purgeme(delme):
 
 
 @register(outgoing=True, pattern="^\.del$")
-async def delete_it(delme):
-    """ For .del command, delete the replied message. """
-    msg_src = await delme.get_reply_message()
-    if delme.reply_to_msg_id:
-        try:
-            await msg_src.delete()
-            await delme.delete()
-            if BOTLOG:
-                await delme.client.send_message(
-                    BOTLOG_CHATID, "Deletion of message was successful"
-                )
-        except rpcbaseerrors.BadRequestError:
-            if BOTLOG:
-                await delme.client.send_message(
-                    BOTLOG_CHATID, "Well, I can't delete a message"
-                )
-
-@register(outgoing=True, pattern="^\.d$")
 async def delete_it(delme):
     """ For .del command, delete the replied message. """
     msg_src = await delme.get_reply_message()
@@ -187,43 +168,15 @@ async def selfdestruct(destroy):
 CMD_HELP.update(
     {
         "purge": ".purge\
-        \nUsage: Purges all messages starting from the reply."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "purgeme": ".purgeme <x>\
-        \nUsage: Deletes x amount of your latest messages."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "del": ".del\
-\nUsage: Deletes the message you replied to."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "edit": ".edit <newmessage>\
-\nUsage: Replace your last message with <newmessage>."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "sd": ".sd <x> <message>\
-\nUsage: Creates a message that selfdestructs in x seconds.\
-\nKeep the seconds under 100 since it puts your bot to sleep."
-    }
-)
-
-CMD_HELP.update(
-    {
-        "s": "s/*  sed deleter\
-\nUsage: deletes the sed message\
-\nwhen u use the s/*/* the bots auto deletes it"
+        \nUsage: Purges all messages starting from the reply.\
+        \n\n.purgeme <x>\
+        \nUsage: Deletes x amount of your latest messages.\
+        \n\n.del\
+        \nUsage: Deletes the message you replied to.\
+        \n\n.edit <newmessage>\
+        \nUsage: Replace your last message with <newmessage>.\
+        \n\n.sd <x> <message>\
+        \nUsage: Creates a message that selfdestructs in x seconds.\
+        \nKeep the seconds under 100 since it puts your bot to sleep."
     }
 )
