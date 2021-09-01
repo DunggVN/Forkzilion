@@ -215,7 +215,7 @@ async def upstream(event):
 
 CMD_HELP.update(
     {
-        "ota": ".update"
+        "updater": ".update"
         "\nUsage: Checks if the main userbot repository has any updates and shows a changelog if so."
         "\n\n.update now"
         "\nUsage: Update your userbot, if there are any updates in your userbot repository."
