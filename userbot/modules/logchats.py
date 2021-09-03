@@ -173,6 +173,7 @@ async def set_pmlog(event):
     else:
         await event.edit("`Pm logging is already disabled`")
 
+
 @register(outgoing=True, pattern="^\.grplog(?: |$)(on|off)?")
 async def set_grplog(event):
     "To turn on or turn off group tags logging"
