@@ -119,7 +119,7 @@ async def set_no_log_p_m(setnologpmm):
                 "`logging of messages from this group has been started`"
             )
             if BOTLOG:
-                await setnologpmm.client.send_message(
+                await tgbott.send_message(
                     BOTLOG_CHATID,
                     "#PMLOG\n" + f"Enabled logging for CHAT: {setnologpmm.chat.title}(`{setnologpmm.chat_id}`)",
                 )
@@ -138,7 +138,7 @@ async def set_no_log_p_m(setlogpmm):
                 "`Logging of messages from this chat has been stopped`"
             )
             if BOTLOG:
-                await setlogpmm.client.send_message(
+                await tgbott.send_message(
                     BOTLOG_CHATID,
                     "#PMLOG\n" + f"Disabled logging for CHAT: {setlogpmm.chat.title}(`{setlogpmm.chat_id}`)",
                 )
@@ -164,7 +164,7 @@ async def set_pmlog(event):
             addgvar("PMLOG", h_type)
             await event.edit("`Pm logging is disabled`")
             if BOTLOG:
-                await event.client.send_message(
+                await tgbott.send_message(
                     BOTLOG_CHATID,
                     "#PMLOG\n" + "Disabled pm logging.",
                 )
@@ -211,7 +211,7 @@ async def set_grplog(event):
         addgvar("GRPLOG", h_type)
         await event.edit("`Group logging is enabled`")
         if BOTLOG:
-            await event.client.send_message(
+            await tgbott.send_message(
                 BOTLOG_CHATID,
                 "#PMLOG\n" + "Enabled pm logging.",
             )
