@@ -123,15 +123,15 @@ USER_TERM_ALIAS = "Debian-11"
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME") or "True")
 
-
 # Google Drive Module
 TEMP_DOWNLOAD_DIRECTORY = "./downloads/"
 
-# custom triggers
-TRIGGER = "."
-trgg = TRIGGER
+# bot
+BOT_TOKEN = os.environ.get("BOT_TOKEN") or False
 
-
+# pm logger
+PMLOG = sb(os.environ.get("PMLOG") or "False")
+PMLOG_CHATID = int(os.environ.get("PMLOG_CHATID") or 0)
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
@@ -157,7 +157,10 @@ else:
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 # tgbott variable
-tgbott = bot
+if BOT_TOKEN:
+    tgbott = TelegramClient("newbott", API_KEY, API_HASH).start(bot_token=BOT_TOKEN)
+else:
+    tgbott = bot
 
 async def check_botlog_chatid():
     if not BOTLOG:
