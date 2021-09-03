@@ -17,7 +17,7 @@ import aiohttp
 import heroku3
 import requests
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, bot, tgbott
 from userbot.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -82,7 +82,7 @@ async def variable(var):
             return False
         if variable in heroku_var:
             if BOTLOG:
-                await var.client.send_message(
+                await tgbott.send_message(
                     BOTLOG_CHATID,
                     "#DELCONFIGVAR\n\n" "**Delete ConfigVar**:\n" f"`{variable}`",
                 )
@@ -109,7 +109,7 @@ async def set_var(var):
         await var.edit("`Information sets...`")
     else:
         if BOTLOG:
-            await var.client.send_message(
+            await tgbott.send_message(
                 BOTLOG_CHATID,
                 "#ADDCONFIGVAR\n\n" "**Add ConfigVar**:\n" f"`{variable}` = `{value}`",
             )
