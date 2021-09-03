@@ -23,6 +23,8 @@ from userbot import (
     HEROKU_APP_NAME,
     UPSTREAM_REPO_BRANCH,
     UPSTREAM_REPO_URL,
+    bot,
+    tgbott,
 )
 from userbot.events import register
 
@@ -94,7 +96,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         await event.edit("`Successfully Updated!\n" "Restarting, please wait...`")
 
         if BOTLOG:
-            await event.client.send_message(
+            await tgbott.send_message(
                 BOTLOG_CHATID, "#UPDATE \n" "Your Forkzilion was successfully updated"
             )
 
@@ -114,7 +116,7 @@ async def update(event, repo, ups_rem, ac_br):
     )
 
     if BOTLOG:
-        await event.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, "#UPDATE \n" "Your Forkzilion was successfully updated, send .changelog to know more about this update."
         )
 
