@@ -9,7 +9,7 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, tgbott
 from userbot.events import register
 
 
@@ -42,7 +42,7 @@ async def fastpurger(purg):
     )
 
     if BOTLOG:
-        await purg.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, "Purge of " + str(count) + " messages done successfully."
         )
     await sleep(2)
@@ -78,7 +78,7 @@ async def fastpurger(purg):
     )
 
     if BOTLOG:
-        await purg.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, "Purge of " + str(count) + " messages done successfully."
         )
     await sleep(.5)
@@ -103,7 +103,7 @@ async def purgeme(delme):
         "`Purge complete!` Purged " + str(count) + " messages.",
     )
     if BOTLOG:
-        await delme.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, "Purge of " + str(count) + " messages done successfully."
         )
     await sleep(1)
@@ -126,7 +126,7 @@ async def delete_it(delme):
                 )
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
-                await delme.client.send_message(
+                await tgbott.send_message(
                     BOTLOG_CHATID, "Well, I can't delete a message"
                 )
 
@@ -145,7 +145,7 @@ async def editer(edit):
             break
         i = i + 1
     if BOTLOG:
-        await edit.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, "Edit query was executed successfully"
         )
 
@@ -161,7 +161,7 @@ async def selfdestruct(destroy):
     await sleep(counter)
     await smsg.delete()
     if BOTLOG:
-        await destroy.client.send_message(BOTLOG_CHATID, "sd query done successfully")
+        await tgbott.send_message(BOTLOG_CHATID, "sd query done successfully")
 
 
 
