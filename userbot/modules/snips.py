@@ -6,7 +6,7 @@
 
 from sqlalchemy.orm.exc import UnmappedInstanceError
 
-from userbot import BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG_CHATID, CMD_HELP, bot, tgbott
 from userbot.events import register
 
 
@@ -56,7 +56,7 @@ async def on_snip_save(event):
     msg_id = None
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
-            await event.client.send_message(
+            await tgbott.send_message(
                 BOTLOG_CHATID,
                 f"#SNIP\nKEYWORD: {keyword}"
                 "\n\nThe following message is saved as the data for the snip, "
