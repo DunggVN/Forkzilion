@@ -84,11 +84,11 @@
     },
     "PMLOG": {
       "description": "If you want to enable PM Logs, change value to True",
-      "value": False
+      "value": "False"
     },
     "PMLOG_CHATID": {
       "description": "If you want to enable PM Logs, create a private channel, paste that channel id here",
-      "value": 0
+      "value": "0"
     },
     "BOT_TOKEN": {
       "description": "Your Bot Token",
