@@ -4,7 +4,7 @@
 
 import asyncio, re
 
-from userbot import bot, PMLOG, PMLOG_CHATID, CMD_HELP, LOGS, ISAFK, BOTLOG, BOTLOG_CHATID, trgg, tgbott
+from userbot import bot, PMLOG, PMLOG_CHATID, CMD_HELP, LOGS, ISAFK, BOTLOG, BOTLOG_CHATID, tgbott
 
 from userbot.modules.sql_helper import pm_permit_sql
 from userbot.modules.sql_helper.no_log_pms_sql import gvarstatus, addgvar
