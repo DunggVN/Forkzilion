@@ -131,7 +131,7 @@ TEMP_DOWNLOAD_DIRECTORY = "./downloads/"
 TRIGGER = "."
 trgg = TRIGGER
 
-
+BOT_TOKEN = os.environ.get("BOT_TOKEN") or False
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
@@ -157,7 +157,10 @@ else:
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 # tgbott variable
-tgbott = bot
+if BOT_TOKEN:
+    tgbott = TelegramClient("newbott", API_KEY, API_HASH).start(bot_token=BOT_TOKEN)
+else:
+    tgbott = bot
 
 async def check_botlog_chatid():
     if not BOTLOG:
