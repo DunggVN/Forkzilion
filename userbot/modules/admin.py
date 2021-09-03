@@ -41,7 +41,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, tgbott
 from userbot.events import register
 
 # =================== CONSTANT ===================
@@ -172,7 +172,7 @@ async def fpromote(promt):
 
     # Announce to the logging group if we have promoted successfully
     if BOTLOG:
-        await promt.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             "#PROMOTE\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})\n"
@@ -227,7 +227,7 @@ async def demote(dmod):
 
     # Announce to the logging group if we have demoted successfully
     if BOTLOG:
-        await dmod.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             "#DEMOTE\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})\n"
@@ -287,7 +287,7 @@ async def ban(bon):
     # Announce to the logging group if we have banned the person
     # successfully!
     if BOTLOG:
-        await bon.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             "#BAN\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})\n"
@@ -323,7 +323,7 @@ async def nothanos(unbon):
         await unbon.edit("```Unbanned Successfully```")
 
         if BOTLOG:
-            await unbon.client.send_message(
+            await tgbott.send_message(
                 BOTLOG_CHATID,
                 "#UNBAN\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
@@ -383,7 +383,7 @@ async def spider(spdr):
 
             # Announce to logging group
             if BOTLOG:
-                await spdr.client.send_message(
+                await tgbott.send_message(
                     BOTLOG_CHATID,
                     "#MUTE\n"
                     f"USER: [{user.first_name}](tg://user?id={user.id})\n"
@@ -435,7 +435,7 @@ async def unmoot(unmot):
             return
 
         if BOTLOG:
-            await unmot.client.send_message(
+            await tgbott.send_message(
                 BOTLOG_CHATID,
                 "#UNMUTE\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
@@ -505,7 +505,7 @@ async def rm_deletedacc(show):
     await show.delete()
 
     if BOTLOG:
-        await show.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             "#CLEANUP\n"
             f"Cleaned **{del_u}** deleted account(s) !!\
@@ -604,7 +604,7 @@ async def pin(msg):
     user = await get_user_from_id(msg.from_id, msg)
 
     if BOTLOG:
-        await msg.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             "#PIN\n"
             f"ADMIN: [{user.first_name}](tg://user?id={user.id})\n"
@@ -648,7 +648,7 @@ async def kick(usr):
         await usr.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
 
     if BOTLOG:
-        await usr.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             "#KICK\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})\n"
@@ -690,7 +690,7 @@ async def kick(usr):
         await usr.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
 
     if BOTLOG:
-        await usr.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             "#KICK\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})\n"
