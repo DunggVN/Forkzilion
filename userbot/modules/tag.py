@@ -13,15 +13,11 @@ from telethon.tl.types import UserStatusOnline as onn
 from telethon.tl.types import UserStatusRecently as rec
 from telethon.utils import get_display_name
 
-from userbot import CMD_HELP, trgg
+from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(
-    outgoing=True,
-    pattern="^\{trg}tag(on|off|all|bots|rec|admins|owner) ?(.*)".format(trg=trgg),
-    groups_only=True,
-)
+@register(outgoing=True, pattern="^\.tag(on|off|all|bots|rec|admins|owner)?(.*)")
 async def _(e):
     okk = e.text
     lll = e.pattern_match.group(2)
