@@ -15,7 +15,7 @@ from traceback import format_exc
 from asyncio import sleep 
 from telethon import events
 
-from userbot import LOGSPAMMER, BOTLOG, BOTLOG_CHATID, bot
+from userbot import LOGSPAMMER, BOTLOG, BOTLOG_CHATID, bot, tgbott
 
 
 def register(**args):
@@ -140,11 +140,11 @@ def register(**args):
                     file.close()
 
                     if LOGSPAMMER:
-                       await check.client.send_file(BOTLOG_CHATID, "error.log", caption=text)
+                       await tgbott.send_file(BOTLOG_CHATID, "error.log", caption=text)
                                                  
                                                  
                     else: 
-                       await check.client.send_file(BOTLOG_CHATID, "error.log", caption=text)
+                       await tgbott.send_file(BOTLOG_CHATID, "error.log", caption=text)
                                                  
                                                  
                     remove("error.log")
