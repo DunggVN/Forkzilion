@@ -15,7 +15,7 @@ from os import execl
 from random import randint
 from time import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, tgbott
 from userbot.events import register
 from userbot.utils import time_formatter
 
@@ -42,7 +42,7 @@ async def sleepybot(time):
     await time.edit("`Going For Sleep`")
     if BOTLOG:
         str_counter = time_formatter(counter)
-        await time.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID,
             f"You put the bot to sleep for {str_counter}.",
         )
@@ -55,7 +55,7 @@ async def killbot(shut):
     """For .shutdown command, shut the bot down."""
     await shut.edit("`Shutting The Power Off`")
     if BOTLOG:
-        await shut.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "Bot shut down")
+        await tgbott.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "Bot shut down")
     await bot.disconnect()
 
 
@@ -63,7 +63,7 @@ async def killbot(shut):
 async def killdabot(reboot):
     await reboot.edit("`Restarting`")
     if BOTLOG:
-        await reboot.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
+        await tgbott.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
@@ -113,7 +113,7 @@ async def raw(rawtext):
     with io.BytesIO(str.encode(the_real_message)) as out_file:
         out_file.name = "raw_message_data.txt"
         await rawtext.edit("`Check the userbot log for the decoded message data !!`")
-        await rawtext.client.send_file(
+        await tgbott.send_file(
             BOTLOG_CHATID,
             out_file,
             force_document=True,
