@@ -139,7 +139,7 @@ async def set_no_log_p_m(setlogpmm):
                     "#PMLOG\n" + f"Disabled logging for CHAT: {setlogpmm.chat.title}(`{setlogpmm.chat_id}`)",
                 )
 
-@register(outgoing=True, pattern="^\.pmlog(?: |$)(on|off)?")
+@register(outgoing=True, pattern="^\.pmlog (on|off)$")
 async def set_pmlog(event):
     "To turn on or turn off logging of Private messages"
     input_str = event.pattern_match.group(1)
@@ -174,7 +174,7 @@ async def set_pmlog(event):
         await event.edit("`Pm logging is already disabled`")
 
 
-@register(outgoing=True, pattern="^\.grplog(?: |$)(on|off)?")
+@register(outgoing=True, pattern="^\.grplog (on|off)$")
 async def set_grplog(event):
     "To turn on or turn off group tags logging"
     input_str = event.pattern_match.group(1)
