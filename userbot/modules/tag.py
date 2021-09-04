@@ -17,7 +17,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^\.tag(?: |$)(on|off|all|bots|rec|admins|owner)?")
+@register(outgoing=True, pattern="^\.tag (on|off|all|bots|rec|admins|owner)$")
 async def _(e):
     okk = e.text
     lll = e.pattern_match.group(2)
