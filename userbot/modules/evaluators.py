@@ -10,7 +10,7 @@ import re
 from os import remove
 from sys import executable
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, USER_TERM_ALIAS
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, USER_TERM_ALIAS, bot, tgbott
 from userbot.events import register
 
 
@@ -63,7 +63,7 @@ async def evaluate(query):
         )
 
     if BOTLOG:
-        await query.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, f"Eval query {expression} was executed successfully."
         )
 
@@ -132,14 +132,14 @@ async def run(run_q):
         )
 
     if BOTLOG:
-        await run_q.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, "Exec query " + codepre + " was executed successfully."
         )
 
 
-@register(outgoing=True, pattern="^\.shell(?: |$)(.*)")
+@register(outgoing=True, pattern="^\.sh(?: |$)(.*)")
 async def terminal_runner(term):
-    """ For .shell command, runs bash commands and scripts on your server. """
+    """ For .sh command, runs bash commands and scripts on your server. """
     curruser = USER_TERM_ALIAS
     command = term.pattern_match.group(1)
     try:
@@ -183,7 +183,7 @@ async def terminal_runner(term):
         await term.edit("`" f"{curruser}:~$ {command}" f"\n{result}" "`")
 
     if BOTLOG:
-        await term.client.send_message(
+        await tgbott.send_message(
             BOTLOG_CHATID, "Shell command " + command + " was executed sucessfully.",
         )
 
@@ -192,6 +192,6 @@ CMD_HELP.update({"eval": ">`.eval 2 + 3`"
                  "\nUsage: Evalute mini-expressions.",
                  "exec": ">`.exec print('hello')`"
                  "\nUsage: Execute small python scripts.",
-                 "shell": ">`.shell <cmd>`"
+                 "shell": ">`.sh <cmd>`"
                  "\nUsage: Run bash commands and scripts on your server.",
                  })
