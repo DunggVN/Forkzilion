@@ -115,7 +115,7 @@ COUNTRY = str(os.environ.get("COUNTRY") or "")
 TZ_NUMBER = os.environ.get("TZ_NUMBER") or 1
 
 # Version of Forkzilion
-USERBOT_VERSION = os.environ.get("USERBOT_VERSION") or "production 3.1+"
+USERBOT_VERSION = os.environ.get("USERBOT_VERSION") or "Custom"
 
 # User Terminal alias
 USER_TERM_ALIAS = "Debian-11"
@@ -226,14 +226,14 @@ modules = CMD_HELP
 uptime = time.strftime('%X')
 ##
 output = (
-    "` =============================== `\n"
-    f"`Fizilion is Up and Running.... `\n"
-    f"`=============================== `\n"
+    "` ============================ `\n"
+    f"`Forkzilion is Up and Running `\n"
+    f"`============================ `\n"
     f"•`Telethon       : v{version.__version__} `\n"
     f"•`Python         : v{python_version()} `\n"
     f"•`Branch         : {repo.active_branch.name} `\n"
     f"•`Loaded modules : 62 `\n"
-    f"•`Fizilion       : {USERBOT_VERSION} `\n"
+    f"•`Forkzilion     : {USERBOT_VERSION} `\n"
     f"•`Bot started at : {uptime} `\n" 
 )
 
