@@ -13,7 +13,7 @@ RUN git clone https://github.com/dunggvn/Forkzilion -b DunggVN /Fizilion
 COPY ./sample_config.env ./userbot.session* ./config.env* /Fizilion/
 
 # Install Required Pypi Modules
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Run your bot
 CMD ["python3","-m","userbot"]
