@@ -104,8 +104,8 @@ ALIVE_NAME = os.environ.get("ALIVE_NAME") or None
 ALIVE_LOGO = str(os.environ.get("ALIVE_LOGO") or "https://github.com/AbOuLfOoOoOuF/ProjectFizilion/raw/pruh/resources/fizsmall.png")
 
 # Chrome Driver and Headless Google Chrome Binaries
-CHROME_DRIVER = "/usr/bin/chromedriver"
-GOOGLE_CHROME_BIN = "/usr/bin/chromium"
+CHROME_DRIVER = "/usr/bin/chromium-chromedriver"
+GOOGLE_CHROME_BIN = "/usr/bin/chromium-browser"
 
 # .alive and .help timeout
 TIMEOUT = sb(os.environ.get("TIMEOUT") or "True")
