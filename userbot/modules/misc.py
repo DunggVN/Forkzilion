@@ -62,9 +62,10 @@ async def killbot(shut):
 @register(outgoing=True, pattern="^\.restart$")
 async def killdabot(reboot):
     await reboot.edit("`Restarting`")
+try:  
     if BOTLOG:
         await tgbott.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
-        except asyncio.CancelledError:
+   except asyncio.CancelledError:
             await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
