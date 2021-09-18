@@ -64,11 +64,13 @@ async def killdabot(reboot):
     await reboot.edit("`Restarting`")
     if BOTLOG:
         await tgbott.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
-    await bot.disconnect()
+    except asyncio.CancelledError:
+        await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
     # Shut the existing one down
     exit()
+        
 
 
 @register(outgoing=True, pattern="^\.readme$")
