@@ -27,7 +27,7 @@ async def help(event):
     else:
         final = "**List of all modules** \
         \n**Loaded modules:** `63` \n\
-        \n`============================`\n\
+        \n`==================================`\n\
         \nIf you want help for a specify module \
         \n**Command:** `.help` <module name>\n\n"
         temp = "".join(str(i) + " " for i in CMD_HELP)
