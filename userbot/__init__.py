@@ -105,7 +105,7 @@ ALIVE_LOGO = str(os.environ.get("ALIVE_LOGO") or "https://github.com/AbOuLfOoOoO
 
 # Chrome Driver and Headless Google Chrome Binaries
 CHROME_DRIVER = "/usr/bin/chromedriver"
-GOOGLE_CHROME_BIN = "/usr/bin/chromium"
+GOOGLE_CHROME_BIN = "/usr/bin/google-chrome-stable"
 
 # .alive and .help timeout
 TIMEOUT = sb(os.environ.get("TIMEOUT") or "True")
