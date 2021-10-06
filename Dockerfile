@@ -2,18 +2,15 @@
 FROM dunggvn/forkzilion:latest
 
 # env setup
-RUN mkdir /Fizilion && chmod 777 /Fizilion
-ENV PATH="/Fizilion/bin:$PATH"
-WORKDIR /Fizilion
+RUN mkdir /Forkzilion && chmod 777 /Forkzilion
+ENV PATH="/Forkzilion/bin:$PATH"
+WORKDIR /Forkzilion
 
 # clone repo
-RUN git clone https://github.com/dunggvn/Forkzilion -b DunggVNTest /Fizilion
+RUN git clone https://github.com/dunggvn/Forkzilion -b DunggVNTest /Forkzilion
 
 # Copies session and config(if it exists)
-COPY ./sample_config.env ./userbot.session* ./config.env* /Fizilion/
-
-# install required pypi modules
-RUN pip3 install -r requirements.txt
+COPY ./sample_config.env ./userbot.session* ./config.env* /Forkzilion/
 
 # Finalization
 CMD ["python3","-m","userbot"]
