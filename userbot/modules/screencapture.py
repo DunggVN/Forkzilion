@@ -10,7 +10,7 @@ import io
 from asyncio import sleep
 from re import match
 
-from userbot import CMD_HELP, trgg
+from userbot import CMD_HELP
 from userbot.events import register
 from userbot.utils import chrome, options
 
