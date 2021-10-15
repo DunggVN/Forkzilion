@@ -89,7 +89,7 @@ async def fastpurger(purg):
 async def purgeme(delme):
     """ For .purgeme, delete x count of your latest message."""
     message = delme.text
-    count = 0
+    count = int(message[9:])
     i = 1
 
     async for message in delme.client.iter_messages(delme.chat_id, from_user="me"):
