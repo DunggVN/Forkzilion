@@ -235,7 +235,7 @@ async def amireallyalive(alive):
     output = (
         f"`<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`\n"
         f"  `Forkzilion is up and running...`\n"
-        f"`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
+        f"`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>`\n"
         f"**-[Info]-** \n"
         f"• `Owner          :`  {DEFAULTUSER} \n"
         f"• `Hosting on     : {distro.name(pretty=False)}`\n"
