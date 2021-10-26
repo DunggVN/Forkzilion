@@ -227,15 +227,16 @@ uptime = time.strftime('%X')
 ##
 output = (
     "` <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< `\n"
-    f"`    Forkzilion is Up and Running `\n"
+    f"`  Forkzilion is Up and Running... `\n"
     f"`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> `\n"
-    f"•`Owner          : {ALIVE_NAME} `\n"
-    f"•`Telethon       : v{version.__version__} `\n"
-    f"•`Python         : v{python_version()} `\n"
-    f"•`Branch         : {repo.active_branch.name} `\n"
-    f"•`Bot Version    : {USERBOT_VERSION} `\n"
-    f"•`Bot Uptime     : {uptime} `\n" 
-    f"•`Loaded modules : 63 `\n"
+    f"
+    f"• `Owner         `: {ALIVE_NAME} \n"
+    f"• `Telethon       : v{version.__version__} `\n"
+    f"• `Python         : v{python_version()} `\n"
+    f"• `Branch         : {repo.active_branch.name} `\n"
+    f"• `Bot Version    : {USERBOT_VERSION} `\n"
+    f"• `Bot Uptime     : {uptime} `\n" 
+    f"• `Loaded modules : 63 `\n"
 )
 
 async def start():
