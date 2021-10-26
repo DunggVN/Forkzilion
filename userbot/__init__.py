@@ -229,7 +229,7 @@ output = (
     "` <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< `\n"
     f"`  Forkzilion is Up and Running... `\n"
     f"`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> `\n"
-    f"
+    f"--[Info]--
     f"• `Owner         `: {ALIVE_NAME} \n"
     f"• `Telethon       : v{version.__version__} `\n"
     f"• `Python         : v{python_version()} `\n"
