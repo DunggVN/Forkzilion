@@ -118,7 +118,7 @@ TZ_NUMBER = os.environ.get("TZ_NUMBER") or 1
 USERBOT_VERSION = "1.2.3"
 
 # User Terminal alias
-USER_TERM_ALIAS = "Ubuntu-21.04@SuperLite"
+USER_TERM_ALIAS = "Ubuntu-21.10@DunggVN"
 
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME") or "True")
