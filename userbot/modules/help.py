@@ -27,14 +27,13 @@ async def help(event):
     else:
         final = "**List of all modules** \
         \n**Loaded modules:** `63` \n\
-        \n`==================================`\n\
-        \nIf you want help for a specify module \
-        \n**Command:** `.help` <module name>\n\n"
+        \n**Command:** `.help` <module name>\
+        \n**Usage:** Help for a specific module \n\n"
         temp = "".join(str(i) + " " for i in CMD_HELP)
         temp = sorted(temp.split())
         for i in temp:
             final += "`" + str(i)
-            final += "`\t\t\t|\t\t\t"
+            final += "`\t\t\t-\t\t\t"
         msg=await event.edit(f"{final[:-5]}")
         await sleep(45)
         
