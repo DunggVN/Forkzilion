@@ -64,5 +64,5 @@ google_trans_new
 wget
 validators
 aiofiles
-git+https://github.com/code-rgb/search-engine-parser
+https://github.com/bisohns/search-engine-parser/archive/master.zip
 patool
