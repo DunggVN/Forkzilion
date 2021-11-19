@@ -239,7 +239,7 @@ async def amireallyalive(alive):
         f"**Info** \n"
         f"- `Owner          :`  {DEFAULTUSER} \n"
         f"- `Branch         : {repo.active_branch.name} `\n"
-        f"- `Bot Version    : 1.2.3 `\n"
+        f"- `Bot Version    : {USERBOT_VERSION} `\n"
         f"- `Bot Uptime     : {uptime} `\n"
         f"- `Loaded modules : {len(modules)} `\n"
 
