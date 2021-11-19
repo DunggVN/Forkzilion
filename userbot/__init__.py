@@ -115,7 +115,7 @@ COUNTRY = str(os.environ.get("COUNTRY") or "")
 TZ_NUMBER = os.environ.get("TZ_NUMBER") or 1
 
 # Version of Forkzilion
-USERBOT_VERSION = "1.2.3"
+USERBOT_VERSION = "1.3"
 
 # User Terminal alias
 USER_TERM_ALIAS = "Ubuntu-21.10@DunggVN"
