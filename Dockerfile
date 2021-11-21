@@ -1,6 +1,6 @@
 FROM dunggvn/forkzilion:latest
 
-RUN mkdir /Forkzilion && chmod 777 /Forkzilion && git clone https://github.com/dunggvn/Forkzilion -b DunggVN /Forkzilion
+RUN mkdir /Forkzilion && chmod 777 /Forkzilion && git clone https://github.com/dunggvn/Forkzilion -b SuperLite /Forkzilion
 ENV PATH="/Forkzilion/bin:$PATH"
 WORKDIR /Forkzilion
 
