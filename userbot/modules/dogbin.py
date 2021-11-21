@@ -9,13 +9,13 @@ import os
 
 from requests import exceptions, get, post
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot, tgbott
 from userbot.events import register
 
 DOGBIN_URL = "https://pasty.lus.pm/"
 
 
-@register(outgoing=True, pattern=r"^.paste(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.paste(?: |$)([\s\S]*)")
 async def paste(pstl):
     """ For .paste command, pastes the text directly to dogbin. """
     dogbin_final_url = ""
@@ -61,7 +61,7 @@ async def paste(pstl):
             f"[Pasty RAW URL]({dogbin_final_url+'/raw'})"
         )
         if BOTLOG:
-            await pstl.client.send_message(
+            await tgbott.send_message(
                 BOTLOG_CHATID,
                 f"Paste query was executed successfully\
                 \nPasty ID: `{key}`\
