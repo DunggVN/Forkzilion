@@ -89,9 +89,8 @@ HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME") or None
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY") or None
 
 # Custom (forked) repo URL and BRANCH for updater.
-UPSTREAM_REPO_URL = (os.environ.get("UPSTREAM_REPO_URL")
-                     or "https://github.com/DunggVN/Forkzilion.git")
-UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH") or "DunggVN"
+UPSTREAM_REPO_URL = "https://github.com/dunggvn/Forkzilion.git"
+UPSTREAM_REPO_BRANCH = "SuperLite"
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = "False"
@@ -118,7 +117,7 @@ TZ_NUMBER = os.environ.get("TZ_NUMBER") or 1
 USERBOT_VERSION = "1.3"
 
 # User Terminal alias
-USER_TERM_ALIAS = "Ubuntu-21.10@DunggVN"
+USER_TERM_ALIAS = "Ubuntu-21.10@SuperLite"
 
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME") or "True")
@@ -231,8 +230,8 @@ output = (
     f"`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> `\n"
     f"**--[Info]--** \n"
     f"• `Owner          :` {ALIVE_NAME} \n"
-    f"• `Telethon       : v{version.__version__} `\n"
-    f"• `Python         : v{python_version()} `\n"
+    f"• `Telethon       : {version.__version__} `\n"
+    f"• `Python         : {python_version()} `\n"
     f"• `Branch         : {repo.active_branch.name} `\n"
     f"• `Bot Version    : {USERBOT_VERSION} `\n"
     f"• `Bot Uptime     : {uptime} `\n" 
