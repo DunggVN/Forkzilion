@@ -1,5 +1,5 @@
 <p align="center">
-   <a href="https://github.com/DunggVN/Forkzilion"><img src="https://github.com/DunggVN/Forkzilion/raw/DunggVN/resources/on.jpg" alt="Forkzilion Custom Logo" width=600px></a>
+   <a href="https://github.com/DunggVN/Forkzilion"><img src="https://github.com/dunggvb/Forkzilion/raw/SuperLite/resources/on.jpg" alt="Forkzilion Custom Logo" width=600px></a>
    <br>
    <br>
 </p>
@@ -46,7 +46,7 @@ wget https://raw.githubusercontent.com/DunggVN/Forkzilion/DunggVN/terminal_getst
 ### Deploy on Heroku
 Make sure you have a Heroku account and fill all required vars to run the bot.
 
-<p align="left"><a href="https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FDunggVN%2FForkzilion%2Ftree%2FDunggVN&template=https%3A%2F%2Fgithub.com%2FDunggVN%2FForkzilion%2Ftree%2FDunggVN"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p align="left"><a href="https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fdunggvn%2FForkzilion%2Ftree%2FSuperLite&template=https%3A%2F%2Fgithub.com%2Fdunggvn%2FForkzilion%2Ftree%2FSuperLite"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 ## Groups and Support
 
