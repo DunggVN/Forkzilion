@@ -1,5 +1,5 @@
 <p align="center">
-   <a href="https://github.com/DunggVN/Forkzilion"><img src="https://github.com/dunggvb/Forkzilion/raw/SuperLite/resources/on.jpg" alt="Forkzilion Custom Logo" width=600px></a>
+   <a href="https://github.com/DunggVN/Forkzilion"><img src="https://raw.githubusercontent.com/dunggvn/Forkzilion/SuperLite/resources/on.jpg" alt="Forkzilion Custom Logo" width=600px></a>
    <br>
    <br>
 </p>
